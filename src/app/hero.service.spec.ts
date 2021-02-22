@@ -1,6 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 
 import { HeroService } from './hero.service';
+import {Observable} from 'rxjs';
 
 describe('HeroService', () => {
   let service: HeroService;
