@@ -3,7 +3,7 @@ import {ActivatedRoute} from '@angular/router';
 import {Location} from '@angular/common';
 
 import {Hero} from '../../model/hero';
-import {HeroService} from '../hero.service';
+import {HeroService} from '../../service/hero.service';
 
 @Component({
   selector: 'app-hero-detail',
@@ -25,6 +25,7 @@ export class HeroDetailComponent implements OnInit {
   }
 
   getHero(): void {
+    // tslint:disable-next-line:no-non-null-assertion
     const id = +this.route.snapshot.paramMap.get('id')!;
     this.heroService.getHero(id)
       .subscribe(hero => this.hero = hero);
